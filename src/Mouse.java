@@ -1,9 +1,9 @@
 public class Mouse {
-    String modelo;
-    String cor;
-    int dpi;
-    int carga;
-    boolean ligado;
+    public String modelo;
+    public String cor;
+    private int dpi;
+    protected int carga;
+    private boolean ligado;
 
     void status() {
         System.out.println("Modelo: " + this.modelo);
@@ -14,15 +14,15 @@ public class Mouse {
 
     }
 
-    void funcionando(){
+    public void funcionando(){
       this.ligado = true;
     }
 
-    void desligado() {
+    public void desligado() {
         this.ligado = false;
     }
 
-    void movimentar() {
+    public void movimentar() {
         if (this.carga <= 5 && this.ligado == true) {
             System.out.println("O mouse esta descarregando, por favor coloque ele para carregar.");
         }
@@ -33,6 +33,9 @@ public class Mouse {
         }
     }
 
+    public void dpimouse() {
+        this.dpi = 1200;
+    }
 
 
 
