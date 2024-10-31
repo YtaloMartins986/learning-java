@@ -4,13 +4,6 @@ public class Garrafa {
     private int ml;
     private boolean tampada;
 
-    //Construct Garrafa
-
-    public Garrafa(String m, String c, int l){
-        this.modelo = m;
-        this.cor = c;
-        this.ml = l;
-    }
 
     //Status Da Garrafa
 
@@ -19,6 +12,27 @@ public class Garrafa {
         System.out.println("Cor: " + getCor());
         System.out.println("ML; " + getMl());
     }
+
+    //Construct Garrafa
+
+    public Garrafa(String m, String c, int l){
+        this.setModelo(m);
+        this.setCor(c);
+        this.setMl(l);
+        destampada();
+        beberagua();
+    }
+
+    //Tapada/Destampada
+
+    public void tampada() {
+        this.tampada = true;
+    }
+
+    public void destampada() {
+        this.tampada = false;
+    }
+
 
     // Modelo Da Garrafa
     public String getModelo(){
@@ -44,6 +58,16 @@ public class Garrafa {
     }
     public void setMl(int l){
         this.ml = l;
+    }
+
+    // Beber agua
+
+    public void beberagua(){
+        if(this.tampada == true) {
+            System.out.println("Abra sua garrafa, ela esta tampada!");
+        } else {
+            System.out.println("Beba agua, a sua garrafa esta aberta!");
+        }
     }
 
 
