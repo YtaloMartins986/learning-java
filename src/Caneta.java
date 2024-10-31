@@ -34,7 +34,7 @@ public class Caneta {
         this.tampada = false;
     }
 
-    //Letras do modelo Protegids
+    //Letras do modelo Protegida get/set
 
     public String getModelo() {
         return this.modelo;
@@ -44,7 +44,7 @@ public class Caneta {
         this.modelo = m;
     }
 
-    //Valor de ponta Protegida
+    //Valor de ponta Protegida get/set
 
     public float getPonta() {
         return this.ponta;
@@ -54,7 +54,7 @@ public class Caneta {
         this.ponta = p;
     }
 
-    //Valor da carga protegido
+    //Valor da carga protegido get/set
 
     public int getCarga() {
         return this.carga;
@@ -64,7 +64,7 @@ public class Caneta {
         this.carga = c;
     }
 
-    //Letras de cor protegidas
+    //Letras de cor protegidas get/set
 
     public String getCor() {
         return this.cor;
