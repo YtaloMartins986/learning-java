@@ -1,15 +1,15 @@
 public class Mouse {
-    public String modelo;
-    public String cor;
+    private String modelo;
+    private String cor;
     private int dpi;
-    protected int carga;
+    private int carga;
     private boolean ligado;
 
     void status() {
-        System.out.println("Modelo: " + this.modelo);
-        System.out.println("Cor: " + this.cor);
-        System.out.println("Dpi: " + this.dpi);
-        System.out.println("Carga: " + this.carga);
+        System.out.println("Modelo: " + this.getModelo());
+        System.out.println("Cor: " + this.getCor());
+        System.out.println("Dpi: " + this.getDpi());
+        System.out.println("Carga: " + this.getCarga());
         System.out.println("Esta ligado?: " + this.ligado);
 
     }
@@ -33,12 +33,41 @@ public class Mouse {
         }
     }
 
-    public void dpimouse() {
-        this.dpi = 1200;
+    //Modelo get/set
+
+    public String getModelo(){
+        return this.modelo;
+    }
+    public void setModelo(String m){
+        this.modelo = m;
     }
 
+    //Cor get/set
 
+    public String getCor(){
+        return this.cor;
+    }
+    public void setCor(String c){
+        this.cor = c;
+    }
 
+    //Dpi get/set
+
+    public int getDpi(){
+        return this.dpi;
+    }
+    public void setDpi(int d){
+        this.dpi = d;
+    }
+
+    //Carga get/set
+
+    public int getCarga(){
+        return this.carga;
+    }
+    public void setCarga(int c){
+        this.carga = c;
+    }
 
 
 }
