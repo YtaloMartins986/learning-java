@@ -14,13 +14,19 @@ public class Mouse {
 
     }
 
+    //metodo ligado
+
     public void funcionando(){
       this.ligado = true;
     }
 
+    //metodo desligado
+
     public void desligado() {
         this.ligado = false;
     }
+
+    //metodo movimento
 
     public void movimentar() {
         if (this.carga <= 5 && this.ligado == true) {
