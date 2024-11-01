@@ -13,7 +13,7 @@ public class Garrafa {
         System.out.println("ML; " + getMl());
     }
 
-    //Construct Garrafa
+    //Construct com parametros Garrafa
 
     public Garrafa(String m, String c, int l){
         this.setModelo(m);
@@ -34,7 +34,7 @@ public class Garrafa {
     }
 
 
-    // Modelo Da Garrafa
+    // Modelo Da Garrafa get/set
     public String getModelo(){
         return this.modelo;
     }
@@ -42,7 +42,7 @@ public class Garrafa {
         this.modelo = m;
     }
 
-    // Cor Da Garrafa
+    // Cor Da Garrafa get/set
 
     public String getCor(){
         return this.cor;
@@ -51,7 +51,7 @@ public class Garrafa {
         this.cor = c;
     }
 
-    // ML Da Garrafa
+    // ML Da Garrafa get/set
 
     public int getMl(){
         return this.ml;
