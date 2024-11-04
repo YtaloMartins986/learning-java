@@ -5,12 +5,12 @@ public class NewBanco {
     bc.setNumcont(123456789);
     bc.setTipo("CP");
     bc.setDono("Ytalo");
-    bc.setStatus(true);
+    bc.setStatus(false);
     bc.abrirConta();
     System.out.println("          RECIBOS          ");
     System.out.println("--------------------------");
     bc.deposito(120);
-    bc.sacar(250);
+    //bc.sacar(250);
     bc.pagarMensal();
     System.out.println("--------------------------");
     System.out.println(" ");
