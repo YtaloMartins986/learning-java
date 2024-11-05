@@ -14,85 +14,75 @@ public class Banco {
 
     }
 
-        //Metodo Construtor contasInic
-        public Banco() {
-            this.saldo = 0;
-            this.status = false;
-        }
+    //Metodo Construtor contasInic
+    public Banco() {
+        this.saldo = 0;
+        this.status = false;
+    }
 
-        //Getters e Setters
+    //Getters e Setters
 
-        //Atributo numcont get/set
-        public int getNumcont() {
-            return numcont;
-        }
+    public int getNumcont() {
+        return numcont;
+    }
+    public void setNumcont(int n) {
+        this.numcont = n;
+    }
 
-        public void setnumcont(int n) {
-            this.numcont = n;
-        }
+    public String getTipo() {
+        return tipo;
+    }
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
 
-        //Atributo tipo get/set
-        public String getTipo() {
-            return tipo;
-        }
+    public String getDono() {
+        return this.dono;
+    }
+    public void setDono(String d) {
+        this.dono = d;
+    }
 
-        public void setTipo(String tipo) {
-            this.tipo = tipo;
-        }
+    public float getSaldo() {
+        return this.saldo;
+    }
+    public void setSaldo(float s) {
+        this.saldo = s;
+    }
 
-        //Atributo dono get/set
-        public String getDono() {
-            return this.dono;
-        }
-
-        public void setDono(String d) {
-            this.dono = d;
-        }
-
-        //Atributo saldo get/set
-        public float getSaldo() {
-            return this.saldo;
-        }
-
-        public void setNumcont(int n) {
-            this.numcont = n;
-        }
-
-        //Atributo status get/set
-        public boolean getStatus() {
-            return this.status;
-        }
-
-        public void setStatus(boolean s) {
-            this.status = s;
-        }
+    public boolean getStatus() {
+        return this.status;
+    }
+    public void setStatus(boolean s) {
+        this.status = s;
+    }
 
     //Metodos
 
     //Metodo tipo de conta
     public void abrirConta() {
         if (this.tipo == "CC" && this.status == true) {
-            this.saldo = 50;
+            this.setSaldo(50);
         } else if (this.tipo == "CP" && this.status == true) {
-            this.saldo = 150;
+            this.setSaldo(150);
         }
     }
 
     //Metodo Fechar conta
     public void fecharConta() {
-        if (this.saldo > 0.0 || this.saldo <= -1) {
+        if (this.saldo > 0.0) {
             System.out.println("Para fechar sua conta saque seu saldo.");
-            this.status = false;
         } else {
             System.out.println("Conta fechada");
+            this.setStatus(false);
         }
 
     }
 
     // Metodo Deposito
     public void deposito(int v) {
-        if (status == true) {
-            this.saldo = v + this.saldo;
+        if (this.status == true) {
+            this.setSaldo(this.saldo + v);
             System.out.println("Voce depositou " + v + " !");
         } else {
             System.out.println("Ative o status do seu banco para depositar");
@@ -100,34 +90,35 @@ public class Banco {
     }
 
     // Metodo Sacar
+    int valorerro;
     public void sacar(int s) {
-        if (s <= this.saldo) {
-            this.saldo = this.saldo - s;
+        if (s <= getSaldo()) {
+           this.setSaldo(this.saldo - s);
             System.out.println("Voce sacou R$" + s);
-        } else {
-            System.out.println("Voce nao pode sacar R$" + s + "voce nao tem esse valor na sua conta");
+        }  else {
+            this.valorerro = s;
+        }
+
+    }
+
+    //Metodo saqueerro
+    public void saqueErro() {
+        if(this.valorerro > getSaldo()) {
+            System.out.println("Voce nao tem esse valor de R$" + this.valorerro );
+        }
+
+    }
+
+    // Metodo pagarMensal
+    public void pagarMensal() {
+        if(getTipo() == "CC" && this.status == true) {
+            this.setSaldo(this.saldo - 12);
+            System.out.println(" Mensalidade paga -12R$ ");
+        } else if (getTipo() == "CP" && this.status == true){
+            this.setSaldo(this.saldo - 20);
+            System.out.println(" Mensalidade paga -20R$ ");
         }
     }
-        // Metodo pagarMensal
-        public void pagarMensal() {
-            if(getTipo() == "CC" && this.status == true) {
-                this.saldo = this.saldo - 12;
-                System.out.println(" Mensalidade paga -12R$ ");
-            } else if (getTipo() == "CP" && this.status == true){
-                this.saldo = this.saldo - 20;
-                System.out.println(" Mensalidade paga -20R$ ");
-            }
-        }
-
-
-
-
-
-
-
-
-
-
 
 }
 
